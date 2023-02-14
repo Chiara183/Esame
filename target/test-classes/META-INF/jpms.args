@@ -1,0 +1,4 @@
+--patch-module
+com.example.calculator=_
+--add-reads
+com.example.calculator=ALL-UNNAMED

@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.shape.*?>
+<?import javafx.scene.text.*?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.calculator.CalcController">
+   <children>
+      <StackPane prefHeight="91.0" prefWidth="300.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#f3f6f8" height="83.0" stroke="#b5b0b0" strokeType="INSIDE" width="287.0">
+               <StackPane.margin>
+                  <Insets top="5.0" />
+               </StackPane.margin>
+            </Rectangle>
+            <Text fx:id="output" strokeType="OUTSIDE" strokeWidth="0.0" textAlignment="RIGHT" wrappingWidth="262.13671875">
+               <font>
+                  <Font size="34.0" />
+               </font>
+            </Text>
+         </children>
+      </StackPane>
+      <HBox prefHeight="55.0" prefWidth="300.0" spacing="7.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#numCancel" prefHeight="51.0" prefWidth="137.0" text="C">
+               <font>
+                  <Font size="24.0" />
+               </font>
+               <HBox.margin>
+                  <Insets />
+               </HBox.margin>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#numOperation" prefHeight="58.0" prefWidth="65.0" text="√">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#numOperation" prefHeight="58.0" prefWidth="65.0" text="Log">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" top="5.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="55.0" prefWidth="300.0" spacing="7.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#numSelection" prefHeight="58.0" prefWidth="65.0" text="7">
+               <font>
+                  <Font size="22.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#numSelection" prefHeight="58.0" prefWidth="65.0" text="8">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#numSelection" prefHeight="58.0" prefWidth="65.0" text="9">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#numOperation" prefHeight="58.0" prefWidth="65.0" text="/">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="55.0" prefWidth="300.0" spacing="7.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#numSelection" prefHeight="58.0" prefWidth="65.0" text="4">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#numSelection" prefHeight="58.0" prefWidth="65.0" text="5">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#numSelection" prefHeight="58.0" prefWidth="65.0" text="6">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#numOperation" prefHeight="58.0" prefWidth="65.0" text="*">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="55.0" prefWidth="300.0" spacing="7.0">
+         <children>
+            <Button fx:id="1Button" mnemonicParsing="false" onAction="#numSelection" prefHeight="58.0" prefWidth="65.0" text="1">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="2Button" mnemonicParsing="false" onAction="#numSelection" prefHeight="58.0" prefWidth="65.0" text="2">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#numSelection" prefHeight="58.0" prefWidth="65.0" text="3">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#numOperation" prefHeight="58.0" prefWidth="65.0" text="-">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
+      </HBox>
+      <HBox prefHeight="55.0" prefWidth="300.0" spacing="7.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#numSelection" prefHeight="58.0" prefWidth="65.0" text="0">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#numSelection" prefHeight="58.0" prefWidth="65.0" text=".">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="equalButton" mnemonicParsing="false" onAction="#numOperation" prefHeight="58.0" prefWidth="65.0" text="=">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+            <Button fx:id="plusButton" mnemonicParsing="false" onAction="#numOperation" prefHeight="58.0" prefWidth="65.0" text="+">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Button>
+         </children>
+         <padding>
+            <Insets left="10.0" top="10.0" />
+         </padding>
+      </HBox>
+   </children>
+</VBox>
