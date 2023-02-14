@@ -5,8 +5,14 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.text.Text;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 public class CalcController {
+
+    Logger logger = Logger.getLogger(CalcController.class.getName());
+
     @FXML
     private Text output;
     private float num1 = 0;
@@ -44,7 +50,6 @@ public class CalcController {
             }else {
                 int res;
                 String doubleAsText = String.valueOf(result);
-                double number = Double.parseDouble(doubleAsText);
                 int fractional = Integer.parseInt(doubleAsText.substring(doubleAsText.indexOf('.') + 1, doubleAsText.indexOf('.') + 2));
                 if (fractional == 0) {
                     res = (int) result;
@@ -57,7 +62,7 @@ public class CalcController {
             }
         }else{
             if(op.isEmpty()){
-                System.out.println("No operation selected");
+                logger.log(Level.INFO, "No operation selected");
                 return;
             }
             output.setText(String.valueOf(model.calculation(num1, Float.parseFloat(output.getText()), op)));

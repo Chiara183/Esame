@@ -13,7 +13,6 @@ import java.util.logging.Logger;
 
 public class CalcApp extends Application {
     Logger logger = Logger.getLogger(CalcApp.class.getName());
-    //@Override
     public void start(Stage stage) throws Exception {
         try {
             Parent root = FXMLLoader.load(getClass().getResource("hello-view.fxml"));
