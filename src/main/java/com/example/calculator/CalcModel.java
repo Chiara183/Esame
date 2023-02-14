@@ -1,8 +1,13 @@
 package com.example.calculator;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 import static java.lang.Math.*;
 
 public class CalcModel {
+    Logger logger = Logger.getLogger(CalcModel.class.getName());
+
     public float calculation(float num1, float num2, String op) {
         switch (op) {
             case "+":
@@ -16,7 +21,7 @@ public class CalcModel {
                     return 0;
                 return num1 / num2;
             default:
-                System.out.println("Error: Unknown operation selected");
+                logger.log(Level.INFO, "Error: Unknown operation selected");
                 return 0;
         }
 }
