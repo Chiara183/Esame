@@ -51,28 +51,32 @@ public class CalcController {
             start = true;
         }else if(op.equals("Log")){
             double result = model.log(num1);
-            if(result == 0){
-                output.setText("NaN or ∞");
-
-            }else {
-                int res;
-                String doubleAsText = String.valueOf(result);
-                int fractional = Integer.parseInt(doubleAsText.substring(doubleAsText.indexOf('.') + 1, doubleAsText.indexOf('.') + 2));
-                if (fractional == 0) {
-                    res = (int) result;
-                    output.setText(String.valueOf(res));
-                } else {
-                    output.setText(String.valueOf(result));
-                }
-                op = "";
-                start = true;
-            }
+            helpMEthod(result);
         }else{
             if(op.isEmpty()){
                 logger.log(Level.INFO, "No operation selected");
                 return;
             }
             output.setText(String.valueOf(model.calculation(num1, Float.parseFloat(output.getText()), op)));
+            op = "";
+            start = true;
+        }
+    }
+
+    private void helpMEthod(double result){
+        if(result == 0){
+            output.setText("NaN or ∞");
+
+        }else {
+            int res;
+            String doubleAsText = String.valueOf(result);
+            int fractional = Integer.parseInt(doubleAsText.substring(doubleAsText.indexOf('.') + 1, doubleAsText.indexOf('.') + 2));
+            if (fractional == 0) {
+                res = (int) result;
+                output.setText(String.valueOf(res));
+            } else {
+                output.setText(String.valueOf(result));
+            }
             op = "";
             start = true;
         }
