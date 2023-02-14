@@ -11,6 +11,7 @@ module com.example.calculator {
     requires org.kordamp.ikonli.javafx;
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
+    requires java.logging;
 
     opens com.example.calculator to javafx.fxml, javafx.web, javafx.graphics, javafx.controls, javafx.base;
     exports com.example.calculator;

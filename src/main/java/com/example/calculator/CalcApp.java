@@ -6,9 +6,13 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 //import java.io.IOException;
 
 public class CalcApp extends Application {
+    Logger logger = Logger.getLogger(CalcApp.class.getName());
     //@Override
     public void start(Stage stage) throws Exception {
         try {
@@ -18,7 +22,7 @@ public class CalcApp extends Application {
             stage.setScene(scene);
             stage.show();
         } catch(Exception e){
-            e.printStackTrace();
+            logger.log(Level.INFO, e.getMessage());
         }
     }
 
