@@ -32,6 +32,6 @@ public class CalcModel {
         if(num <= 0) {
             return 0;
         }
-        return log10(num);
+        return Math.log(num);
     }
 }
