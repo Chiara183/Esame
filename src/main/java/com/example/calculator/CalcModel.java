@@ -25,8 +25,8 @@ public class CalcModel {
                 return 0;
         }
 }
-    public float squareRoot(float num1){
-        return (float)sqrt(num1);
+    public double squareRoot(double num1){
+        return sqrt(num1);
     }
     public double log(double num){
         if(num <= 0) {

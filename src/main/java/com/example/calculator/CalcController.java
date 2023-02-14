@@ -18,6 +18,7 @@ public class CalcController {
     private float num1 = 0;
     private String op = "";
     private boolean start = true;
+    private boolean first = true;
     private CalcModel model = new CalcModel();
 
     @FXML
@@ -26,11 +27,17 @@ public class CalcController {
             output.setText("");
             start = false;
         }
+        if(first){
+            first = false;
+        }
         String value = ((Button)event.getSource()).getText();
         output.setText(output.getText() + value);
     }
     @FXML
     private void numOperation(ActionEvent event) {
+        if(first){
+            return;
+        }
         String value = ((Button) event.getSource()).getText();
         if (!"=".equals(value)) {
             if (!op.isEmpty())
@@ -39,7 +46,16 @@ public class CalcController {
             num1 = Float.parseFloat(output.getText());
             output.setText("");
         }else if(op.equals("√")){
-            output.setText(String.valueOf(model.squareRoot(num1)));
+            double result = model.squareRoot(num1);
+            int res;
+            String doubleAsText = String.valueOf(result);
+            int fractional = Integer.parseInt(doubleAsText.substring(doubleAsText.indexOf('.') + 1, doubleAsText.indexOf('.') + 2));
+            if (fractional == 0) {
+                res = (int) result;
+                output.setText(String.valueOf(res));
+            } else {
+                output.setText(String.valueOf(result));
+            }
             op = "";
             start = true;
         }else if(op.equals("Log")){
