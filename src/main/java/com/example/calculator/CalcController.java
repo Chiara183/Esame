@@ -46,16 +46,7 @@ public class CalcController {
             num1 = Float.parseFloat(output.getText());
             output.setText("");
         }else if(op.equals("√")){
-            double result = model.squareRoot(num1);
-            int res;
-            String doubleAsText = String.valueOf(result);
-            int fractional = Integer.parseInt(doubleAsText.substring(doubleAsText.indexOf('.') + 1, doubleAsText.indexOf('.') + 2));
-            if (fractional == 0) {
-                res = (int) result;
-                output.setText(String.valueOf(res));
-            } else {
-                output.setText(String.valueOf(result));
-            }
+            output.setText(String.valueOf(model.squareRoot(num1)));
             op = "";
             start = true;
         }else if(op.equals("Log")){
